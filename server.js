@@ -41,10 +41,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(cookieParser());
 app.use(session({
-    secret: 'your-secret-key',
+    secret: process.env.SESSION_SECRET, // Use the secret from environment variables
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } // Set to true if using HTTPS
+    cookie: { secure: true } // Set to true if using HTTPS
 }));
 
 app.post('/login', async (req, res) => {

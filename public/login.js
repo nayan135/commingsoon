@@ -14,7 +14,7 @@ document.querySelector(".login-form form").addEventListener("submit", async func
     e.preventDefault();
     const username = document.getElementById("login-username").value;
     const password = document.getElementById("login-password").value;
-    const response = await fetch('/login', {
+    const response = await fetch('/api/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ document.querySelector(".signup-form form").addEventListener("submit", async fun
     const surname = document.getElementById("signup-surname").value;
     const username = document.getElementById("signup-username").value;
     const password = document.getElementById("signup-password").value;
-    const response = await fetch('/signup', {
+    const response = await fetch('/api/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

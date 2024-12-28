@@ -42,7 +42,7 @@ app.use(session({
     cookie: { secure: true }
 }));
 
-app.post('/api/login', async (req, res) => {
+app.post('/api/login.js', async (req, res) => {
     const { username, password } = req.body;
     try {
         await client.connect();

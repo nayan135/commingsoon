@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.container {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-wrapper {
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: #505050;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+.input-field:focus {
+    border: 2px solid transparent;
+    animation: gradient-border 2s infinite linear;
+    background-color: #909090;
+}
+
+.floating-label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #bbb;
+    font-size: 14px;
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+    pointer-events: none;
+}
+
+.input-field:focus+.floating-label,
+.input-field:not(:placeholder-shown)+.floating-label {
+    top: -12px;
+    font-size: 12px;
+    color: #000000;
+}
+
+.input-field:placeholder-shown+.floating-label {
+    color: #ffffff;
+}
+
+@keyframes gradient-border {
+    0% {
+        border-image-source: radial-gradient(circle at 10% 10%, #0056ff, transparent);
+    }
+    50% {
+        border-image-source: radial-gradient(circle at 50% 50%, #00ff88, transparent);
+    }
+    100% {
+        border-image-source: radial-gradient(circle at 90% 90%, #ff0056, transparent);
+    }
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0056ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.login-button:hover {
+    background-color: #0040cc;
+}
+
+.switch-text {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.switch-text a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}

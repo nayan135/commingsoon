@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup Animation</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Login Form -->
+            <div class="form login-form">
+                <h1>LOGIN</h1>
+                <form>
+                    <div class="input-wrapper">
+                        <input type="text" id="login-username" class="input-field" placeholder=" " required>
+                        <label for="login-username" class="floating-label">USERNAME</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="password" id="login-password" class="input-field" placeholder=" " required>
+                        <label for="login-password" class="floating-label">PASSWORD</label>
+                    </div>
+                    <button type="submit" class="login-button">LOGIN</button>
+                </form>
+                <p class="switch-text">DON'T HAVE AN ACCOUNT? <a href="#" id="switch-to-signup">CLICK HERE..</a></p>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="form signup-form hidden">
+                <h1>SIGNUP</h1>
+                <form>
+                    <div class="input-wrapper">
+                        <input type="text" id="signup-name" class="input-field" placeholder=" " required>
+                        <label for="signup-name" class="floating-label">NAME</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="signup-surname" class="input-field" placeholder=" " required>
+                        <label for="signup-surname" class="floating-label">SURNAME</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="signup-username" class="input-field" placeholder=" " required>
+                        <label for="signup-username" class="floating-label">USERNAME</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="password" id="signup-password" class="input-field" placeholder=" " required>
+                        <label for="signup-password" class="floating-label">PASSWORD</label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="password" id="signup-confirm-password" class="input-field" placeholder=" "
+                            required>
+                        <label for="signup-confirm-password" class="floating-label">CONFIRM PASSWORD</label>
+                    </div>
+                    <button type="submit" class="login-button">SIGNUP</button>
+                </form>
+                <p class="switch-text">ALREADY HAVE AN ACCOUNT? <a href="#" id="switch-to-login">CLICK HERE..</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

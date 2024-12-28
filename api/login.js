@@ -17,7 +17,7 @@ const client = new MongoClient(uri, {
 
 const allowedOrigins = [
     'http://blog.nayanacharya.info.np',
-    'https://commingsoon-51lfhwjs1-nayan135s-projects.vercel.app'
+    'https://commingsoon-six.vercel.app/'
 ];
 
 app.use(cors({

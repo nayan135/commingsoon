@@ -19,6 +19,7 @@ const client = new MongoClient(uri, {
 
 // CORS configuration
 const allowedOrigins = [
+    'http://localhost:3000',
     'http://blog.nayanacharya.info.np',
     'https://commingsoon-51lfhwjs1-nayan135s-projects.vercel.app'
 ];
@@ -44,7 +45,7 @@ app.use(session({
     secret: process.env.SESSION_SECRET, // Use the secret from environment variables
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true } // Set to true if using HTTPS
+    cookie: { secure: false } // Set to true if using HTTPS
 }));
 
 app.post('/login', async (req, res) => {
@@ -58,10 +59,10 @@ app.post('/login', async (req, res) => {
             req.session.user = username;
             res.send('Login successful');
         } else {
-            res.send('Invalid username or password');
+            res.status(401).send('Invalid username or password');
         }
     } catch (error) {
-        console.error(error);
+        console.error('Error during login:', error);
         res.status(500).send('Internal Server Error');
     } finally {
         await client.close();
@@ -76,13 +77,13 @@ app.post('/signup', async (req, res) => {
         const collection = database.collection('users');
         const existingUser = await collection.findOne({ username });
         if (existingUser) {
-            res.send('Username already exists');
+            res.status(409).send('Username already exists');
         } else {
             await collection.insertOne({ name, surname, username, password });
             res.send('Signup successful');
         }
     } catch (error) {
-        console.error(error);
+        console.error('Error during signup:', error);
         res.status(500).send('Internal Server Error');
     } finally {
         await client.close();
